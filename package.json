@@ -1,7 +1,7 @@
 {
   "name": "@asurraa-lab/node-media-server",
-  "version": "1.0.1",
-  "description": "A Node.js implementation of RTMP Server",
+  "version": "1.0.3",
+  "description": "(Fork version to fix obs can't publish) A Node.js implementation of RTMP Server",
   "bin": "bin/app.js",
   "main": "src/node_media_server.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/illuspas/Node-Media-Server.git"
+    "url": "git+https://github.com/asurraa-lab/Node-Media-Server.git"
   },
   "keywords": [
     "rtmp",
@@ -20,9 +20,9 @@
   "author": "Chen Mingliang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/illuspas/Node-Media-Server/issues"
+    "url": "https://github.com/asurraa-lab/Node-Media-Server/issues"
   },
-  "homepage": "https://github.com/illuspas/Node-Media-Server#readme",
+  "homepage": "https://github.com/asurraa-lab/Node-Media-Server#readme",
   "dependencies": {
     "basic-auth-connect": "^1.0.0",
     "chalk": "^2.4.2",
