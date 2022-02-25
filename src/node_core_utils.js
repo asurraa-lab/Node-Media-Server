@@ -31,12 +31,6 @@ function genRandomName() {
 }
 
 function verifyAuth(signStr, streamId, secretKey) {
-  console.log(
-    "authhhhh xxxxxxxxxxxxxxxxxxxxxxxxxxxx:",
-    signStr,
-    streamId,
-    secretKey
-  );
   if (signStr === undefined) {
     return false;
   }

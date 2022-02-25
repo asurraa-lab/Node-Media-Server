@@ -1142,8 +1142,6 @@ class NodeRtmpSession {
   }
 
   onPublish(invokeMessage) {
-    console.log("ppppppppppppppppp");
-    Logger.log("xxxxxxxxxxxxxx, invekeMessasge", invokeMessage);
     if (typeof invokeMessage.streamName !== "string") {
       return;
     }
@@ -1171,7 +1169,7 @@ class NodeRtmpSession {
 
     Logger.log(
       "=======================",
-      "---------xxxxx-----\n",
+      "---------Log Stream Credential-----\n",
       "sign =>",
       this.publishArgs.sign,
       "---\n",
