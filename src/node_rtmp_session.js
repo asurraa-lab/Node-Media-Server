@@ -1142,11 +1142,15 @@ class NodeRtmpSession {
   }
 
   onPublish(invokeMessage) {
+    console.log("ppppppppppppppppp");
+    Logger.log("xxxxxxxxxxxxxx, invekeMessasge", invokeMessage);
     if (typeof invokeMessage.streamName !== "string") {
       return;
     }
     this.publishStreamPath =
-      "/" + this.appname + "/" + invokeMessage.streamName.split("?")[0];
+      // * original stream logic
+      // "/" + this.appname + "/" + invokeMessage.streamName.split("?")[0];
+      "/" + this.appname + invokeMessage.streamName.split("?")[0];
     this.publishArgs = QueryString.parse(
       invokeMessage.streamName.split("?")[1]
     );
@@ -1164,19 +1168,27 @@ class NodeRtmpSession {
     // * Where the auth logic goes
     // * enable local
     //  if (this.config.auth && this.config.auth.publish && !this.isLocal) {
+
+    Logger.log(
+      "=======================",
+      "---------xxxxx-----\n",
+      "sign =>",
+      this.publishArgs.sign,
+      "---\n",
+      "stream path =>",
+      this.publishStreamPath,
+      "---\n",
+      "stream secret  =>",
+      this.config.auth.secret,
+      "\n======================="
+    );
     if (this.config.auth && this.config.auth.publish) {
       let results = NodeCoreUtils.verifyAuth(
         this.publishArgs.sign,
         this.publishStreamPath,
         this.config.auth.secret
       );
-      Logger.log(
-        "---------xxxxx-----",
-        results,
-        this.publishArgs.sign,
-        this.publishStreamPath,
-        this.config.auth.secret
-      );
+
       if (!results) {
         Logger.log(
           `[rtmp publish] Unauthorized. id=${this.id} streamPath=${this.publishStreamPath} streamId=${this.publishStreamId} sign=${this.publishArgs.sign} `
