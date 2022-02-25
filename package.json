@@ -5,7 +5,8 @@
   "bin": "bin/app.js",
   "main": "src/node_media_server.js",
   "scripts": {
-    "start": "node bin/app.js"
+    "start": "node bin/app.js",
+    "dev": "nodemon src/node_media_server.js"
   },
   "repository": {
     "type": "git",
@@ -34,5 +35,8 @@
   },
   "engines": {
     "node": ">=8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
